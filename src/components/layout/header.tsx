@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { User2 } from "lucide-react"
 import { cn } from "@/lib/utils"
+import LoggedOutHeader from "@/components/Header"
+
 
 const navItems = [
   {
@@ -42,6 +44,10 @@ export function Header() {
   const handleSignOut = async () => {
     await signOut()
     router.push("/signin")
+  }
+
+  if(!isAuthenticated) {
+    return <LoggedOutHeader />
   }
 
   return (
