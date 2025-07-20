@@ -6,6 +6,8 @@ import { Plan } from '@/types/stripe';
 import { toast } from '@/hooks/use-toast';
 import api from '@/lib/api/axios';
 import Layout from '@/components/layout';
+import {Button} from '@/components/ui/button';
+import PricingPlans from '@/components/PricingPlans';
 
 export default function PricingPage() {
   const { data: plans, isLoading, error } = usePlans();
@@ -63,11 +65,12 @@ export default function PricingPage() {
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {plans?.map((plan) => (
-            <PricingCard
+            <PricingPlans
               key={plan.id}
               plan={plan}
               onSubscribe={() => handleSubscribe(plan.id)}
               isLoading={loading === plan.id}
+              popular={plan?.name === '3_MONTHS'}
             />
           ))}
         </div>
@@ -75,6 +78,11 @@ export default function PricingPage() {
   </Layout>
   );
 }
+
+
+
+
+
 
 function PricingCard({
     plan,

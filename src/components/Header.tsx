@@ -6,8 +6,8 @@ import Link from 'next/link';
 
 const Header: React.FC = () => {
   return (
-    <header className="z-50 p-6 pb-5">
-      <div className="container mx-auto flex justify-between items-center">
+    <header className="z-50 p-7 pb-5">
+      <div className="w-full flex justify-between items-center">
         <h1 className="text-2xl font-bold text-white font-poppins">SyndicateUP</h1>
         <div className="hidden md:flex items-center space-x-8 text-white">
             <a href="#features" className="hover:text-[#FFD98C] transition-colors">Features</a>

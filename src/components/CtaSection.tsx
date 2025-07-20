@@ -2,6 +2,7 @@
 import React from 'react';
 import {Button} from './ui/button';
 import FadeIn from './ui/FadeIn';
+import Link from 'next/link';
 
 const CtaSection: React.FC = () => {
   return (
@@ -17,9 +18,11 @@ const CtaSection: React.FC = () => {
                             Join SyndicateUP today and unlock a world of business opportunities. Your next great venture is just a connection away.
                         </p>
                         <div className="mt-8">
-                            <Button variant="secondary" className="bg-black text-black border-black hover:bg-gray-800 hover:text-white">
-                                Join SyndicateUP Now
-                            </Button>
+                            <Link href={'/signup'}>  
+                                <Button variant="secondary" className="bg-black text-white border-black hover:bg-gray-800 hover:text-white">
+                                    Join Now
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
