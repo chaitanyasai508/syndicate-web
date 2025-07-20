@@ -15,7 +15,7 @@ const Header: React.FC = () => {
             <a href="#pricing" className="hover:text-[#FFD98C] transition-colors">Pricing</a>
         </div>
         <Link href="/signin">
-          <Button variant="secondary" className="hidden md:block px-3 py-0.5">Get Started</Button>
+          <Button variant="secondary" className="hidden md:block px-3 py-0.5">Sign In</Button>
         </Link>
       </div>
     </header>

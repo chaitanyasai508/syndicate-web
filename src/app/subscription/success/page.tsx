@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import api from '@/lib/api/axios';
+import Layout from '@/components/layout';
 
 export default function SuccessPage() {
   const searchParams = useSearchParams();
@@ -40,7 +41,8 @@ export default function SuccessPage() {
   }, [sessionId, router]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <Layout>
+    <div className="flex-1 flex items-center justify-center px-4">
       <div className="max-w-md w-full text-center">
         {status === 'loading' && (
           <div>
@@ -80,5 +82,6 @@ export default function SuccessPage() {
         )}
       </div>
     </div>
+    </Layout>
   );
 }

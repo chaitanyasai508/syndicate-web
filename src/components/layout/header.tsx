@@ -31,7 +31,7 @@ const navItems = [
 
 const publicPaths = ['/signin', '/signup', '/forgot-password']
 
-export function Header() {
+function Header() {
   const router = useRouter()
   const pathname = usePathname()
   const { user, signOut, isAuthenticated } = useAuthStore()
@@ -115,3 +115,5 @@ export function Header() {
     </header>
   )
 }
+
+export default Header;

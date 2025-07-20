@@ -5,6 +5,7 @@ import { usePlans } from '@/hooks/usePlans';
 import { Plan } from '@/types/stripe';
 import { toast } from '@/hooks/use-toast';
 import api from '@/lib/api/axios';
+import Layout from '@/components/layout';
 
 export default function PricingPage() {
   const { data: plans, isLoading, error } = usePlans();
@@ -49,27 +50,29 @@ export default function PricingPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 h-full">
-      <div className="text-center">
-        <h1 className="text-3xl font-extrabold text-foreground sm:text-4xl">
-          Pricing Plans
-        </h1>
-        <p className="mt-4 text-xl text-foreground/70">
-          Choose the perfect plan for your needs
-        </p>
-      </div>
+    <Layout>
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 h-full">
+        <div className="text-center">
+          <h1 className="text-3xl font-extrabold text-foreground sm:text-4xl">
+            Pricing Plans
+          </h1>
+          <p className="mt-4 text-xl text-foreground/70">
+            Choose the perfect plan for your needs
+          </p>
+        </div>
 
-      <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {plans?.map((plan) => (
-          <PricingCard
-            key={plan.id}
-            plan={plan}
-            onSubscribe={() => handleSubscribe(plan.id)}
-            isLoading={loading === plan.id}
-          />
-        ))}
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {plans?.map((plan) => (
+            <PricingCard
+              key={plan.id}
+              plan={plan}
+              onSubscribe={() => handleSubscribe(plan.id)}
+              isLoading={loading === plan.id}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+  </Layout>
   );
 }
 
