@@ -84,7 +84,7 @@ export const useAiChat = () => {
     setError(null);
 
     // Add user message immediately
-    setMessages(prev => [...prev, { content: userMessage, isUser: true }]);
+    setMessages(prev => [{ content: userMessage, isUser: true }]);
     setMessages(prev => [...prev, { content: 'Thinking...', isUser: false, loading: true }]);
 
     // setTimeout(() => {

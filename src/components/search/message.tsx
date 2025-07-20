@@ -28,7 +28,7 @@ export function Message({ content, isUser, loading }: MessageProps) {
         <div className={cn(
           "rounded-2xl px-4 py-2 max-w-[90%]",
           isUser
-            ? "bg-primary text-primary-foreground"
+            ? "bg-primary/90 text-primary-foreground"
             : "bg-card text-card-foreground border border-border"
         )}>
           {loading ? (

@@ -15,7 +15,7 @@
     --background: 240 5% 8%; /* #131516 - Combination of #1C1C1C and #131313 */
     --foreground: 210 40% 98%; /* hsl(210, 40%, 98%) - White */
 
-    --card: 240 5% 11%; /* Slightly lighter than background */
+    --card: 240 3% 13%; /* Slightly lighter than background */
     --card-foreground: 210 40% 98%;
 
     --popover: 240 5% 11%;
@@ -37,7 +37,7 @@
     --destructive-foreground: 210 40% 98%;
 
     --border: 240 4% 20%; /* gray-700/50 equivalent */
-    --input: 240 4% 15%;
+    --input: 240 2% 25%;
     --ring: 45 99% 63%; /* #FFC346 */
 
     --radius: 0.75rem;

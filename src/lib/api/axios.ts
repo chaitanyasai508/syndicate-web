@@ -55,19 +55,19 @@ api.interceptors.response.use(
         description: "You don't have permission to perform this action",
       })
     } else if (error.response?.status === 404) {
-      toast({
-        variant: "destructive",
-        title: "Not Found",
-        description: "The requested resource was not found",
-      })
+      // toast({
+      //   variant: "destructive",
+      //   title: "Not Found",
+      //   description: (error.response?.data as any)?.error || "The requested resource was not found",
+      // })
     } else {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: (error.response?.data as any)?.message || "Something went wrong",
-      })
+      // toast({
+      //   variant: "destructive",
+      //   title: "Error",
+      //   description: (error.response?.data as any)?.error || "Something went wrong",
+      // })
     }
-    return Promise.reject(error)
+    return Promise.resolve(error.response?.data)
   }
 )
 

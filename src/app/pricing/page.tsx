@@ -8,9 +8,12 @@ import api from '@/lib/api/axios';
 import Layout from '@/components/layout';
 import {Button} from '@/components/ui/button';
 import PricingPlans from '@/components/PricingPlans';
+import { useSubscriptionStore} from '@/store/use-subscription-store';
+
 
 export default function PricingPage() {
   const { data: plans, isLoading, error } = usePlans();
+  const { status, setStatus  } = useSubscriptionStore();
   const [loading, setLoading] = useState<string | null>(null);
 
   const handleSubscribe = async (planId: string) => {

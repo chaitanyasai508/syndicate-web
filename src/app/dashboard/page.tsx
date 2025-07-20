@@ -7,6 +7,8 @@ import Layout from "@/components/layout"
 
 export default function DashboardPage() {
   const { logout } = useAuth()
+
+
   const { user } = useAuthStore()
   return (
    <Layout>
